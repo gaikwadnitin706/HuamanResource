@@ -1,0 +1,21 @@
+package com.example.hrms.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+public class PerformanceReview {
+
+	@Id
+	private String reviewId;
+//	StriEmployee ID,
+	private LocalDate reviewDate;
+	private String reviewerName;
+	private String reviewerComments;
+	private float rating;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Employee employee;
+}

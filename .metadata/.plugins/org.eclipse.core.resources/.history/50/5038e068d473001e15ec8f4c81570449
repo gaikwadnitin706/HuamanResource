@@ -1,0 +1,21 @@
+package com.example.hrms.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.hrms.response.SuccessResponse;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@RestController
+public class EmployeeController {
+
+	@PostMapping
+	public ResponseEntity<SuccessResponse> createEmployee(@RequestBody EmployeeDto) {
+		
+		return null;
+	}
+}

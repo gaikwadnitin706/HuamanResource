@@ -1,0 +1,33 @@
+package com.example.hrms;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.example.hrms.entity.Employee;
+import com.example.hrms.entity.LeaveRequest;
+import com.example.hrms.entity.PerformanceReview;
+
+@SpringBootApplication
+public class HumanResourceManagementSystemApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HumanResourceManagementSystemApplication.class, args);
+	}
+
+	@Bean
+	public CommandLineRunner CommandLineRunner() {
+
+		return args -> {
+			
+			LeaveRequest leaveRequest01 = LeaveRequest.builder().build();
+			LeaveRequest leaveRequest02 = LeaveRequest.builder().build();
+			
+			PerformanceReview performanceReview01 = PerformanceReview.builder().build();
+			PerformanceReview performanceReview02 = PerformanceReview.builder().build();
+			
+			Employee.builder().build();
+		};
+	}
+}

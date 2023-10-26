@@ -1,0 +1,54 @@
+package com.example.hrms;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.example.hrms.entity.Employee;
+import com.example.hrms.entity.LeaveRequest;
+import com.example.hrms.entity.PerformanceReview;
+import com.example.hrms.entity.Skill;
+import com.example.hrms.entity.TrainingProgram;
+
+@SpringBootApplication
+public class HumanResourceManagementSystemApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HumanResourceManagementSystemApplication.class, args);
+	}
+
+	@Bean
+	public CommandLineRunner CommandLineRunner() {
+
+		return args -> {
+
+			Employee employee = Employee.builder().employeeFirstnName("Nitin").employeeLastName("Gaikwad").employeEmail("gaikwadnitin@gmail.com")
+					.employeeContactNumber("9156046014").employeeDepartment("Development").employeeDesignation("Associate Software Engineer")
+					.employeeJoiningDate(LocalDate.of(2023, 07, 31))
+					.skills(List.of(Skill.builder().skillName("Java").skillDescription("Object oriented programming language").build(),
+							Skill.builder().skillName("Sql").skillDescription("Structured query language").build()))
+					.trainingPrograms(List.of(
+							TrainingProgram.builder().programName("Cloud computing").programDescription("Cloud computing!!!").programStartDate(LocalDate.of(2023, 07, 31))
+									.programEndDate(LocalDate.of(2023, 10, 31)).build(),
+							TrainingProgram.builder().programName("Testing").programDescription("Testing!!!").programStartDate(LocalDate.of(2023, 07, 31))
+									.programEndDate(LocalDate.of(2023, 10, 31)).build()))
+					.build();
+
+			LeaveRequest leaveRequest01 = LeaveRequest.builder().leaveType("Paid").startDate(LocalDate.of(2023, 10, 27))
+					.endDate(LocalDate.of(2023, 11, 5)).reason("Personal Work").status("Pending").employee(employee)
+					.build();
+			LeaveRequest leaveRequest02 = LeaveRequest.builder().leaveType("Sick").startDate(LocalDate.of(2023, 11, 6))
+					.endDate(LocalDate.of(2023, 11, 10)).reason("Fever").status("Approved").employee(employee).build();
+
+			PerformanceReview performanceReview01 = PerformanceReview.builder().reviewDate(null).reviewerName(null)
+					.reviewerComments(null).rating(0).employee(employee).build();
+			PerformanceReview performanceReview02 = PerformanceReview.builder().reviewDate(null).reviewerName(null)
+					.reviewerComments(null).rating(0).employee(employee).build();
+
+		};
+	}
+}

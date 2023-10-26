@@ -1,0 +1,19 @@
+package com.example.hrms.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Id;
+
+public class Employee {
+
+	@Id
+	private String employeeId;
+	private String employeeFirstnName;
+	private String employeeLastName;
+	private String employeEmail;
+	private long employeeContactNumber;
+	private LocalDate employeeJoiningDate;
+	private String employeeDepartment;
+	private String employeeDesignation;
+
+}

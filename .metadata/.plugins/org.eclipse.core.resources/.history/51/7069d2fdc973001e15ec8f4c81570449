@@ -1,0 +1,15 @@
+package com.example.hrms.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Id;
+
+public class TrainingProgram {
+
+	@Id
+	String programId;
+	String programName;
+	String programDescription;
+	LocalDate programStartDate;
+	LocalDate programEndDate;
+}

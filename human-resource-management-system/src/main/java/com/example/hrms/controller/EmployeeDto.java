@@ -1,0 +1,40 @@
+package com.example.hrms.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.example.hrms.entity.LeaveRequest;
+import com.example.hrms.entity.PerformanceReview;
+import com.example.hrms.entity.Skill;
+import com.example.hrms.entity.TrainingProgram;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class EmployeeDto {
+
+	private String employeeId;
+	private String employeeFirstnName;
+	private String employeeLastName;
+	private String employeEmail;
+	private long employeeContactNumber;
+	private LocalDate employeeJoiningDate;
+	private String employeeDepartment;
+	private String employeeDesignation;
+
+	private List<LeaveRequest> leaveRequests;
+
+	private List<PerformanceReview> performanceReviews;
+
+	private List<Skill> skills;
+
+	private List<TrainingProgram> trainingPrograms;
+}

@@ -1,0 +1,22 @@
+package com.example.hrms.utils;
+
+import org.springframework.beans.BeanUtils;
+
+import com.example.hrms.controller.EmployeeDto;
+import com.example.hrms.entity.Employee;
+
+public class EmployeeUtils {
+
+	public Employee dtoToEntity(EmployeeDto employeeDto) {
+		
+		Employee employee = new Employee();
+		
+		BeanUtils.copyProperties(employeeDto, employee);
+		employee.getLeaveRequests()
+		.
+		
+		return null;
+	}
+
+	
+}

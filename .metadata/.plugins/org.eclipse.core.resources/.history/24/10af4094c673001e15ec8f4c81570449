@@ -1,0 +1,21 @@
+package com.example.hrms.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+public class LeaveRequest {
+
+	@Id
+	private String leaveRequestId;
+//	Employee ID, 
+	private LocalDate startDate;
+	private LocalDate endDate;
+	private String leaveType;
+	private String status;// (Pending/Approved/Rejected)
+	private String reason;
+	
+	@ManyToOne
+	private Employee employee;
+}
